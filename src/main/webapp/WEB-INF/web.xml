@@ -10,8 +10,8 @@
   <display-name>Archetype Created Web Application</display-name>
 
     <servlet>
-        <servlet-name>sample</servlet-name>
-        <servlet-class>source.CustomDispatcherServlet</servlet-class>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring/spring-*.xml</param-value>
@@ -20,10 +20,27 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>sample</servlet-name>
+        <servlet-name>dispatcherServlet</servlet-name>
         <!--指定springmvc需要处理的请求-->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>sample</servlet-name>-->
+        <!--<servlet-class>source.CustomDispatcherServlet</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>contextConfigLocation</param-name>-->
+            <!--<param-value>classpath:spring/spring-*.xml</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>sample</servlet-name>-->
+        <!--&lt;!&ndash;指定springmvc需要处理的请求&ndash;&gt;-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <!--<context-param>-->
         <!--<param-name>contextConfigLocation</param-name>-->

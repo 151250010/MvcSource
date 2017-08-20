@@ -165,7 +165,7 @@ public class CustomDispatcherServlet extends FrameworkServlet{
     private void initHandlerMappings(ApplicationContext applicationContext) {
 
         this.handlerMappings = null;
-        //先从applicationContext中获取bean
+        //先从webapplicationContext中获取bean
         Map<String, HandlerMapping> stringHandlerMappingMap = BeanFactoryUtils.beansOfTypeIncludingAncestors(applicationContext, HandlerMapping.class, true, false);
         this.handlerMappings = new ArrayList<>(stringHandlerMappingMap.values());
 
@@ -173,7 +173,7 @@ public class CustomDispatcherServlet extends FrameworkServlet{
             LOGGER.info("could not find a handler mapping instance from current application context!");
         }
 
-        //或者我们可以试下从根上下文中获取HanlderMapping
+        //我们可以试下从根上下文中获取HanlderMapping
         try {
             HandlerMapping handlerMappingOfRoot = applicationContext.getParent().getBean(HandlerMapping.class);
             if (handlerMappingOfRoot != null) {
